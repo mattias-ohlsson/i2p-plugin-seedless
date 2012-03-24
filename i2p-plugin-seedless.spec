@@ -35,7 +35,7 @@ Seedless core and console plugin is a self-seeding seed information spreader for
 %install
 rm -rf $RPM_BUILD_ROOT
 # Install to i2p plugins (-p, --preserve-timestamps for extra security)
-install -d -p $RPM_BUILD_ROOT/usr/local/i2p/.i2p/plugins
+install -d -p -m700 $RPM_BUILD_ROOT/usr/local/i2p/.i2p/plugins
 # FIXTHIS: Use install, not cp
 cp -R 02_seedless $RPM_BUILD_ROOT/usr/local/i2p/.i2p/plugins/
 
