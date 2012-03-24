@@ -15,8 +15,10 @@ BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildRequires:	p7zip
 Requires:	i2p i2p-plugin-neodatis
 
+# Description from plugin.config and from 
+# http://sponge.i2p/files/seedless/doc/Seedless.pdf
 %description
-Seedless core and console plugin for I2P.
+Seedless core and console plugin is a self-seeding seed information spreader for I2P.
 
 
 %prep
