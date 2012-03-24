@@ -24,7 +24,7 @@ Seedless core and console plugin is a self-seeding seed information spreader for
 
 %prep
 %setup -q
-# Extract thw xpi package with 7zip to 02_seedless
+# Extract the xpi package with 7zip to 02_seedless
 7za x -o02_seedless 02_seedless.xpi2p
 
 
