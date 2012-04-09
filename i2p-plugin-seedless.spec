@@ -1,7 +1,7 @@
 Name:		i2p-plugin-seedless
 # Version from plugin.config (shortened)
 Version:	0.0.62
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Seedless plugin for I2P	
 
 Group:		Applications/Internet
@@ -30,6 +30,11 @@ Seedless core and console plugin is a self-seeding seed information spreader for
 
 %build
 # This is a binary
+
+# Disable automatic update
+sed -i \
+  -e 's|updateURL=|#DISABLED (rpm package): updateURL=|g' \
+  02_seedless/plugin.config
 
 
 %install
@@ -63,5 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Apr 9 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.0.62-2
+- Disable automatic update
+
 * Sat Mar 24 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.0.62-1
 - Initial package
