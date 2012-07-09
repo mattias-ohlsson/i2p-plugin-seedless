@@ -1,7 +1,7 @@
 Name:		i2p-plugin-seedless
-# Version from plugin.config (shortened)
-Version:	0.0.62
-Release:	2%{?dist}
+# Version from plugin.config (0.1.2-0.1.8)
+Version:	0.1.2
+Release:	0.1.8.1%{?dist}
 Summary:	Seedless plugin for I2P	
 
 Group:		Applications/Internet
@@ -68,6 +68,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Jul 9 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.1.2-0.1.8.1
+- New version
+
 * Mon Apr 9 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.0.62-2
 - Disable automatic update
 
