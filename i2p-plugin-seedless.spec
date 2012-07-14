@@ -40,7 +40,7 @@ sed -i \
 %install
 rm -rf $RPM_BUILD_ROOT
 # Install to i2p plugins (-p, --preserve-timestamps for extra security)
-install -d -p -m700 $RPM_BUILD_ROOT/usr/local/i2p/.i2p/plugins
+install -d -p $RPM_BUILD_ROOT/usr/local/i2p/.i2p/plugins
 # FIXTHIS: Use install, not cp
 cp -R 02_seedless $RPM_BUILD_ROOT/usr/local/i2p/.i2p/plugins/
 
@@ -48,8 +48,6 @@ cp -R 02_seedless $RPM_BUILD_ROOT/usr/local/i2p/.i2p/plugins/
 %post
 # Condrestart i2p and return 0
 /sbin/service i2p condrestart >/dev/null 2>&1 || :
-# Set owner and group to i2p
-chown i2p:i2p -R /usr/local/i2p/.i2p
 
 
 %postun
@@ -62,8 +60,11 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
-%defattr(-,root,root,-)
+%defattr(700,i2p,i2p,700)
 %doc
+# list all folders to apply defattr
+/usr/local/i2p/.i2p
+/usr/local/i2p/.i2p/plugins
 /usr/local/i2p/.i2p/plugins/02_seedless
 
 
