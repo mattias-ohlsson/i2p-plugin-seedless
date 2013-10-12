@@ -8,7 +8,7 @@ Group:		Applications/Internet
 # License from plugin.config
 License:	WTFPL
 URL:		http://sponge.i2p/files/seedless/02_seedless.xpi2p
-# FIXTHIS: This is a the binary in a archive folder
+# FIXTHIS: This is a binary in an archive folder
 Source0:	i2p-plugin-seedless-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
